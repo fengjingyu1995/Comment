@@ -1,0 +1,64 @@
+$rootClass: "comment-info-action-bar";
+
+.#{$rootClass} {
+  font-size: 10px;
+  color: #b4b4b4;
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // action bar items should be visibly clickable
+  > * {
+    cursor: pointer;
+  }
+
+  // reply number should be darker
+
+  &__view-reply__number {
+    color: #828282;
+  }
+
+  // vote icons
+
+  &__vote {
+    &--up::before,
+    &--down::before {
+      width: 12px;
+      height: 12px;
+      vertical-align: bottom;
+      margin-right: 2.5px;
+      display: inline-block;
+      background-size: 12px 12px;
+      content: "";
+    }
+
+    &--up::before {
+      background-image: url(/icons/up.svg);
+    }
+
+    &--down::before {
+      background-image: url(/icons/down.svg);
+    }
+  }
+}
+
+// when entire comment is hovered, the action bar items should be visibly darker
+
+.comment:hover .#{$rootClass} {
+  color: #787878;
+
+  &__view-reply__number {
+    color: #464646;
+  }
+
+  &__vote {
+    &--up::before {
+      background-image: url(/icons/up_darker.svg);
+    }
+
+    &--down::before {
+      background-image: url(/icons/down_darker.svg);
+    }
+  }
+}

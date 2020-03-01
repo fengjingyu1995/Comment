@@ -1,0 +1,69 @@
+$rootClass: "comment";
+
+.#{$rootClass} {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  max-width: 670px;
+  margin: 10px auto;
+  padding: 20px 10px;
+  border-width: 1.25px 0;
+  border-color: #e9e9e9;
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+
+  &__avatar {
+    flex: 0 0 70px;
+
+    &__img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
+  }
+
+  &__info {
+    flex: 1 1 540px;
+
+    &__header {
+      width: 225px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 9px;
+
+      &__author {
+        font-weight: bold;
+      }
+
+      &__occupation {
+        padding: 2px 10px;
+        border-radius: 10px;
+        background-color: #343434;
+        color: white;
+        font-size: 11px;
+      }
+
+      &__time-ago {
+        font-size: 10px;
+        color: #8b8b8b;
+
+        &::before {
+          content: " · ";
+        }
+      }
+    }
+
+    &__text {
+      padding-bottom: 9px;
+      line-height: 1.5em;
+      display: block;
+    }
+  }
+
+  // reset the default p style
+
+  p {
+    margin: 0;
+  }
+}
